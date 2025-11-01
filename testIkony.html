@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test ikon Matlab</title>
+
+    <!-- Font Awesome pro test ikon -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+          integrity="sha512-p6EwtdYk..."
+          crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <style>
+        body {
+            background: #f7f9fc;
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            text-align: center;
+        }
+        h1 {
+            color: #0096C7;
+            font-size: 32px;
+        }
+        .icon-box {
+            padding: 20px;
+            background: white;
+            display: inline-block;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+            margin: 20px;
+        }
+        .fa-solid {
+            font-size: 50px;
+            color: #0096C7;
+        }
+        svg {
+            width: 70px;
+            height: 70px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Test ikon pro MATLAB stránku</h1>
+
+    <!-- Font Awesome ikona -->
+    <div class="icon-box">
+        <i class="fa-solid fa-calculator"></i>
+        <p>Font Awesome (matematika)</p>
+    </div>
+
+    <!-- SVG ikona matice -->
+    <div class="icon-box">
+        <svg viewBox="0 0 24 24">
+            <defs>
+                <linearGradient id="matlabGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FF8C00"/>
+                    <stop offset="100%" stop-color="#0096C7"/>
+                </linearGradient>
+            </defs>
+            <rect x="2" y="2" width="8" height="8" rx="2" fill="url(#matlabGradient)"/>
+            <rect x="14" y="2" width="8" height="8" rx="2" fill="url(#matlabGradient)"/>
+            <rect x="2" y="14" width="8" height="8" rx="2" fill="url(#matlabGradient)"/>
+            <rect x="14" y="14" width="8" height="8" rx="2" fill="url(#matlabGradient)"/>
+        </svg>
+        <p>Matice (vlastní SVG)</p>
+    </div>
+
+</body>
+</html>

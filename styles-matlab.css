@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.logo-header .logo-link {
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.logo-header .logo-link:hover .logo {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.logo-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #0072BD;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.logo-header img {
+    height: 60px;
+    margin-right: 20px;
+    border-radius: 8px;
+    transition: transform .3s ease;
+}
+.logo-header img:hover { transform: scale(1.05); }
+
+/* Content */
+section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+section:hover { background: #fafafa; }
+h2 { color: #0072BD; }
+
+/* PDF Button */
+.pdf-button {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 20px 0;
+    background-color: #0072BD;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: .3s;
+}
+.pdf-button:hover {
+    background-color: #3390D0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* List & Icons */
+.matlab-list {
+    list-style: none;
+    padding: 0;
+}
+.matlab-list li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+.matlab-icon {
+    margin-right: 12px;
+    transition: transform .2s ease;
+}
+.matlab-fa {
+    margin-right: 12px;
+    font-size: 20px;
+    background: linear-gradient(45deg, #0072BD, #3390D0);
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: transform .2s ease;
+}
+.matlab-list li:hover svg,
+.matlab-list li:hover .matlab-fa {
+    transform: scale(1.2);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 0;
+}
+footer button {
+    padding: 12px 25px;
+    border: none;
+    background-color: #0072BD;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .3s;
+}
+footer button:hover {
+    background-color: #3390D0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
