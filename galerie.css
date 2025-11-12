@@ -24,12 +24,19 @@ header {
 }
 
 header h1 {
-  margin: 0;
+  margin: 40px;
   font-size: 1.8rem;
 }
 
 header p {
   margin: 0.5rem 0 0;
+}
+
+.header-logo {
+  width: 40%;    /* logo zabere 40 % šířky hlavičky */
+  height: auto;
+  max-width: 300px;  /* aby se nepřerostlo na velkých obrazovkách */
+  margin: 0 auto; border-radius: 15px; box-shadow: 10px 10px 5px black;
 }
 
 main {
@@ -53,10 +60,12 @@ h2 {
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-auto-rows: 200px; /* výška řádku */
   gap: 1rem;
 }
 
 .item {
+  position: relative; /* pro umístění popisku */
   background: var(--card);
   border-radius: 10px;
   overflow: hidden;
@@ -72,7 +81,7 @@ h2 {
 
 .item img {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
@@ -158,4 +167,39 @@ footer {
   font-size: 1rem;
   padding: 0.5rem 1rem;
   box-sizing: border-box;
+}
+
+
+
+.thumb-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.6rem;
+  text-align: center;
+  box-sizing: border-box;
+
+}
+
+#schodiste .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px; /* mezery mezi obrázky */
+}
+
+#schodiste .item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px; /* jemné zaoblení rohů */
+}
+
+.thumb-caption {
+  text-align: center;
+  font-size: 0.9em;
+  margin-top: 5px;
 }
