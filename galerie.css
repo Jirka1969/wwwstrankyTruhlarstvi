@@ -19,18 +19,48 @@ body {
 header {
   background: linear-gradient(90deg, #0ea5a4, #60a5fa);
   color: #fff;
-  text-align: center;
-  padding: 2rem 1rem;
+  padding: 20px 0;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* DOMŮ vlevo, logo uprostřed, KONTAKT vpravo */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .header-logo {
-  width: 40%;
-  max-width: 300px;
+  width: 350px; /* roztažené logo */
   height: auto;
+  object-fit: contain;
+  max-width: 300px;
   display: block;
   margin: 0 auto;
-  border-radius: 15px;
+  border-radius: 20px;
   box-shadow: 10px 10px 5px black;
+}
+
+.header-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1em;
+  font-weight: 600;
+  color:black;
+  text-decoration: none;
+  border: 2px solid #f0edeaf3;
+  border-radius: 20px;
+  padding: 10px 20px;
+  background-color: #b5a6a6;
+  min-width: 120px;
+  height: 60px;
+  transition: all 0.2s;
+}
+
+.header-button:hover {
+  background-color: #e0e0e0;
 }
 
 main {
