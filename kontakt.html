@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Kontakt</title>
+    <style>
+        :root{--bg:#f7f9fb;--card:#ffffff;--accent:#0078d4;--muted:#6b7280}
+        html,body{height:100%}
+        body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Noto Sans",sans-serif;background:var(--bg);color:#111}
+        .container{max-width:980px;margin:40px auto;padding:24px}
+        header h1{margin:0 0 8px;font-size:1.75rem}
+        p.lead{margin:0 0 18px;color:var(--muted)}
+        .grid{display:grid;grid-template-columns:1fr 380px;gap:24px}
+        .card{background:var(--card);padding:20px;border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+        .contact-item{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px}
+        .contact-item svg{flex:0 0 20px;margin-top:3px;opacity:.9}
+        form{display:flex;flex-direction:column;gap:12px}
+        label{font-size:.9rem;color:#111}
+        input[type="text"],input[type="email"],textarea{width:100%;padding:10px;border:1px solid #e6e9ee;border-radius:8px;font-size:1rem;background:#fff}
+        textarea{min-height:140px;resize:vertical}
+        .row{display:flex;gap:12px}
+        .row .col{flex:1}
+        button{background:var(--accent);color:#fff;border:0;padding:10px 14px;border-radius:8px;font-weight:600;cursor:pointer}
+        .muted{color:var(--muted);font-size:.95rem}
+        .success{background:#e6ffef;color:#025930;padding:10px;border-radius:8px}
+        @media (max-width:880px){.grid{grid-template-columns:1fr}}
+
+        /* Přidané: zarovnání footeru na střed a omezení šířky */
+        footer{
+            max-width:980px;
+            margin:24px auto;
+            padding:12px 24px;
+            text-align:center;
+        }
+        footer p{margin:8px 0 0;color:var(--muted);font-size:.95rem}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Kontakt - <em>!!!Zatím nefunguje, jenom simuluje odeslání!!!</em></h1>
+            <p class="lead">Máte dotaz nebo potřebujete více informací? Napište nám pomocí formuláře níže nebo použijte kontaktní údaje.</p>
+        </header>
+
+        <main class="grid" aria-labelledby="contact-heading">
+            <section class="card" id="form-card" aria-labelledby="form-heading">
+                <h2 id="form-heading" style="margin-top:0;margin-bottom:6px">Napište nám</h2>
+                <p class="muted" style="margin-top:0;margin-bottom:12px">Odpovíme co nejdříve, obvykle do 24 hodin.</p>
+
+                <form id="contactForm" method="post" action="#" novalidate>
+                    <!-- Honeypot to reduce spam -->
+                    <input type="text" name="company" style="position:absolute;left:-10000px;top:auto;opacity:0" tabindex="-1" autocomplete="off" />
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="name">Jméno <span aria-hidden="true" style="color:#d00">*</span></label>
+                            <input id="name" name="name" type="text" required autocomplete="name" placeholder="Vaše jméno" />
+                        </div>
+                        <div class="col">
+                            <label for="phone">Telefon (volitelně)</label>
+                            <input id="phone" name="phone" type="text" inputmode="tel" placeholder="+420 123 456 789" />
+                        </div>
+                    </div>
+
+                    <label for="email">E‑mail <span aria-hidden="true" style="color:#d00">*</span></label>
+                    <input id="email" name="email" type="email" required autocomplete="email" placeholder="vas@email.cz" />
+
+                    <label for="subject">Předmět</label>
+                    <input id="subject" name="subject" type="text" placeholder="Krátký popis" />
+
+                    <label for="message">Zpráva <span aria-hidden="true" style="color:#d00">*</span></label>
+                    <textarea id="message" name="message" required placeholder="Napište zprávu..." ></textarea>
+
+                    <div style="display:flex;gap:12px;align-items:center">
+                        <button type="submit">Odeslat</button>
+                        <div id="formStatus" aria-live="polite" style="font-size:.95rem"></div>
+                    </div>
+                </form>
+            </section>
+
+            <aside class="card" aria-labelledby="info-heading">
+                <h2 id="info-heading" style="margin-top:0;margin-bottom:8px">Kontaktní údaje</h2>
+
+                <div class="contact-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M3 8.5C3 6 8.03 3 12 3s9 3 9 5.5v6c0 2.5-5.03 5.5-9 5.5S3 17 3 14.5v-6z" stroke="#111" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8 11h8" stroke="#111" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div>
+                        <div style="font-weight:600">Adresa</div>
+                        <div class="muted">Ulice 123, Město, 123 45</div>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.86 19.86 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12 1.05.36 2.07.72 3.03a2 2 0 0 1-.45 2.11L8.09 10.91a16 16 0 0 0 6 6l1.04-1.04a2 2 0 0 1 2.11-.45c.96.36 1.98.6 3.03.72A2 2 0 0 1 22 16.92z" stroke="#111" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div>
+                        <div style="font-weight:600">Telefon</div>
+                        <div class="muted">+420 123 456 789</div>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M3 8.5v7A2.5 2.5 0 0 0 5.5 18h13A2.5 2.5 0 0 0 21 15.5v-7" stroke="#111" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 8.5l9 6 9-6" stroke="#111" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div>
+                        <div style="font-weight:600">E‑mail</div>
+                        <div class="muted"><a href="mailto:info@priklad.cz" style="color:var(--accent);text-decoration:none">info@priklad.cz</a></div>
+                    </div>
+                </div>
+
+                <hr style="border:none;border-top:1px solid #eef2f6;margin:14px 0" />
+
+                <div class="muted" style="font-size:.92rem">
+                    Pro rychlé dotazy volejte v pracovní dny 9:00–17:00 nebo použijte formulář. Odeslání je zabezpečeno a údaje zůstanou důvěrné.
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <footer>
+        <button onclick="window.location.href='index.html'">Zpět na úvodní stránku</button>
+        <p>&copy; 2025 Vaňha Jiří - Truhlářství</p>
+    </footer>
+
+    <script>
+        // Jednoduchá lokální validace + simulované odeslání
+        (function(){
+            const form = document.getElementById('contactForm');
+            const status = document.getElementById('formStatus');
+
+            form.addEventListener('submit', function(e){
+                e.preventDefault();
+                status.textContent = '';
+                // honeypot
+                if (form.company && form.company.value.trim() !== '') return;
+
+                if (!form.checkValidity()) {
+                    form.reportValidity();
+                    return;
+                }
+
+                const btn = form.querySelector('button[type="submit"]');
+                btn.disabled = true;
+                btn.textContent = 'Odesílám...';
+
+                // Simulace AJAX odeslání — nahradit vlastním endpoinetem
+                setTimeout(() => {
+                    btn.disabled = false;
+                    btn.textContent = 'Odeslat';
+                    form.reset();
+                    status.innerHTML = '<div class="success">Děkujeme, zpráva byla odeslána. Ozveme se co nejdříve.</div>';
+                }, 900);
+            });
+        })();
+    </script>
+</body>
+</html>
