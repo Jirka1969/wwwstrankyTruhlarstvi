@@ -17,6 +17,9 @@ body {
 }
 
 header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   background: linear-gradient(90deg, #0ea5a4, #60a5fa);
   color: #fff;
   text-align: center;
