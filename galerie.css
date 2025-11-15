@@ -186,3 +186,26 @@ footer p {
   font-size: 0.95rem;
 }
 
+/* Mobilní verze headeru */
+@media (max-width: 600px) {
+
+  .header-content {
+    flex-direction: column;      /* logo nahoře, text pod ním */
+    gap: 0.8rem;                 /* menší mezera */
+    padding: 0.5rem 0;
+  }
+
+  .header-logo {
+    width: 90px;                 /* menší logo */
+  }
+
+  header h1 {
+    font-size: 1.3rem;           /* menší nadpis */
+    padding: 0 0.5rem;           /* aby text nevylezl mimo */
+  }
+
+  header {
+    padding: 0.8rem 0.5rem;
+  }
+}
+
