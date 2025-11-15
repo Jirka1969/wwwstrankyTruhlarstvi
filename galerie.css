@@ -23,17 +23,28 @@ header {
   background: linear-gradient(90deg, #0ea5a4, #60a5fa);
   color: #fff;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 1rem;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .header-logo {
-  width: 40%;
-  max-width: 300px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  border-radius: 15px;
-  box-shadow: 10px 10px 5px black;
+  width: 140px;       /* zvětšit šířku pro lepší čitelnost */
+  height: auto;       /* zachovat poměr stran */
+  border-radius: 12px; /* mírně menší zaoblení */
+  box-shadow: 0 6px 18px var(--shadow); /* jemnější stín */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
 }
 
 main {
